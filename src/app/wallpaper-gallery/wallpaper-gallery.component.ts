@@ -14,8 +14,13 @@ export class WallpaperGalleryComponent {
     'assets\\Aquarium_002.png',
     'assets\\Aquarium_003.png',
     'assets\\Capture.PNG',
+    'assets\\bottle_007.jpg',
+    'assets\\bottle_forest_017.jpg',
     'assets\\Capture.PNG',
+    'assets\\break_009.jpg',
     'assets\\vertical_globes_002.jpg',
+    'assets\\break_025.jpg',
+    'assets\\break_047.jpg',
     'assets\\vertical_globes_017.jpg',
     'assets\\vertical_globes_018.jpg',
     'assets\\vertical_globes_019.jpg',
@@ -23,6 +28,9 @@ export class WallpaperGalleryComponent {
     'assets\\vertical_globes_021.jpg',
     'assets\\vertical_globes_024.jpg',
     'assets\\vertical_globes_025.jpg',
+    'assets\\fruit_bird_055.jpg',
+    'assets\\fruit_bird_003.jpg',
+    'assets\\mtfuji_059.jpg'
   ];
   imagesPerRow = 3; // Change this to the desired number of images per row
   @ViewChild('hiddenImage') hiddenImage!: ElementRef;
