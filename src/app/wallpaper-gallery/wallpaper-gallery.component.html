@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Wallpapers</span>
+
+  </mat-toolbar>
+<!-- Add this hidden image element -->
+<img #hiddenImage style="display: none;" />
+
+  <div class="gallery-container">
+    <ng-container *ngFor="let wallpaper of wallpapers; let i = index">
+      <div class="wallpaper-row" *ngIf="i % imagesPerRow === 0">
+        <div class="wallpaper-item" *ngFor="let img of getImagesForRow(i)">
+          <img [src]="img" alt="Wallpaper" (click)="openImageDialog(img)" />
+        </div>
+      </div>
+    </ng-container>
+  </div>

@@ -1,0 +1,6 @@
+<div class="image-dialog-container">
+    <div class="blurry-background" (click)="onClose()"></div>
+    <img class="full-screen-image" [src]="data.imageUrl" (click)="onClose()" />
+    <div class="image-resolution">{{ data.resolution }}</div>
+  </div>
+  

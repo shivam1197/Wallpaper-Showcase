@@ -1,0 +1,35 @@
+.gallery-container {
+    display: flex;
+    grid-template-columns: repeat(3, 1fr); /* Display 4 images per row (adjust the number as needed) */
+    gap: 10px; /* Gap between wallpaper items */
+  }
+  
+  .wallpaper-item {
+    border-radius: 3rem; /* Rounded corners, you can adjust the value to make it more or less rounded */
+
+    position: relative;
+    flex: 1 1 200px; /* Flexbox property: allow flexible sizing, minimum width of 200px */
+    height: 300px; /* Height of each wallpaper item */
+    overflow: hidden; /* Hide any overflowing content within the wallpaper item */
+    padding: 10px;
+    
+  }
+    
+  .wallpaper-item img {
+    border-radius: 3rem; /* Rounded corners, you can adjust the value to make it more or less rounded */
+    margin-top: 10px; /* Add some margin to the top of each image */
+    width: 100%; /* Image width is 100% of the wallpaper item width */
+    height: 100%; /* Image height is 100% of the wallpaper item height */
+    object-fit: cover; /* Scale the image to cover the entire wallpaper item without distorting it */
+    cursor: pointer; /* Change the cursor to a pointer when hovering over the image */
+    transition: transform 0.3s; /* Add a smooth transition for the transform property */
+
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+
+}
+
+.wallpaper-item img:hover{
+  transform: scale(1.1); /* Zoom in the image by 10% on hover */
+
+
+}
