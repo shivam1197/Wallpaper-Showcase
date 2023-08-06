@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { ImageDialogComponent } from '../image-dialog/image-dialog.component';
+import { GoogleAnalyticsServiceService } from '../google-analytics.service.service';
 
 @Component({
   selector: 'app-wallpaper-gallery',
@@ -35,7 +36,8 @@ export class WallpaperGalleryComponent {
   imagesPerRow = 3; // Change this to the desired number of images per row
   @ViewChild('hiddenImage') hiddenImage!: ElementRef;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog,
+    private googleAnalyticsService: GoogleAnalyticsServiceService) {}
 
   openImageDialog(imageUrl: string): void {
     const img = new Image();
@@ -63,4 +65,13 @@ export class WallpaperGalleryComponent {
     this.hiddenImage.nativeElement.src = imageUrl;
     return `${this.hiddenImage.nativeElement.naturalWidth} x ${this.hiddenImage.nativeElement.naturalHeight}`;
   }
+  onButtonClick() {
+    // Track button click event
+    this.googleAnalyticsService.trackEvent('button_click', 'button', 'click', 'Button Label');
+  }
+
+  onImageDownload(imageId: string) {
+    // Track image download event
+    this.googleAnalyticsService.trackEvent('image_download', 'image', 'download', imageId);
+  } 
 }
